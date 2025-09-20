@@ -1,4 +1,4 @@
-# Lista-de-Exerc-cios---primeiro-bimestre
+# Lista-de-Exercicios-primeiro-bimestre
 Linguagem de Programação para Web I
 
 Análise e Desenvolvimento de Sistemas
