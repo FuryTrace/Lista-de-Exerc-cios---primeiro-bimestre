@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 21</title>
+</head>
+<body style="margin:0;">
+
+    <div style="background-color:cyan; width:100%; height:50px; display:flex; align-items:center;">
+        <button 
+        onclick="window.location.href='../index.html'" 
+        style="margin-left:10px; padding:8px 16px; font-weight:bold;">
+        Voltar
+        </button>
+    </div>
+
+    <div style="padding:20px;">
+        <h1>Atividade 21</h1>
+        <p>Escreva um programa para controlar uma fila de atendimento, deve guardar o nome da pessoa ao clicar no botão "entrar na fila" e inserir no final de uma fila. Quando a pessoa for atendida, deve clicar no botão "atender" que vai retirar o nome da pessoa que está no primeiro lugar na fila. Também guarde a data e hora que a pessoa entrou na fila (use Date.now() para obter essa informação. Veja como formatar a data usando Intl.DateTimeFormat).<br>
+        Quando ela for atendida (retirada da fila), deve calcular quanto tempo levou para ser atendida.<br>
+        Use vetores para armazenar as informações. Para inserir no final da fila use o método "push()" e para remover do início da fila use o método "shift()" . Crie um vetor para armazenar o nome e a hora (hora, minutos e segundos) que a pessoa entrou na fila. Em outro vetor armazene o nome, data e hora que pessoa entrou na fila, data e hora que foi atendida e quanto tempo demorou para ser atendida.
+        Cada vez que uma pessoa entrar na fila ou for atendida deve exibir os dados armazenados nos dois vetores.</p>
+        
+        <div style="margin-top: 30px; padding: 20px; border: 2px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+            <h3>Sistema de Controle de Fila</h3>
+            
+            <input 
+                type="text" 
+                id="nomeInput" 
+                placeholder="Digite o nome da pessoa" 
+                style="padding: 8px; width: 200px; border: 1px solid #ccc; border-radius: 4px; margin-right: 10px;"
+            >
+            <button 
+                onclick="entrarNaFila()" 
+                style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">
+                Entrar na Fila
+            </button>
+            <button 
+                onclick="atenderPessoa()" 
+                style="padding: 8px 16px; background-color: #ff9800; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                Atender
+            </button>
+            
+            <div id="resultado" style="margin-top: 20px; padding: 10px; border-radius: 4px; font-family: monospace; font-size: 14px; background-color: #f5f5f5; color: #333; white-space: pre-line;">
+                Sistema carregado. Digite um nome e clique em "Entrar na Fila".
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Vetores para armazenar as informações conforme solicitado
+        let filaEspera = []; // Vetor para nome e hora (hora, minutos e segundos) que pessoa entrou
+        let historicoCompleto = []; // Vetor para histórico completo conforme especificado
+        
+        function entrarNaFila() {
+            const nomeInput = document.getElementById('nomeInput');
+            const nome = nomeInput.value.trim();
+            
+            if (nome === '') {
+                alert('Digite um nome!');
+                return;
+            }
+            
+            // Usa Date.now() conforme solicitado
+            const agora = Date.now();
+            
+            // Formata usando Intl.DateTimeFormat conforme solicitado
+            const horaFormatada = new Intl.DateTimeFormat('pt-BR', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            }).format(new Date(agora));
+            
+            const dataHoraCompleta = new Intl.DateTimeFormat('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            }).format(new Date(agora));
+            
+            // Adiciona no final da fila usando push() conforme solicitado
+            filaEspera.push({
+                nome: nome,
+                horaEntrada: horaFormatada,
+                timestampEntrada: agora
+            });
+            
+            nomeInput.value = '';
+            exibirDados();
+        }
+        
+        function atenderPessoa() {
+            if (filaEspera.length === 0) {
+                alert('Não há ninguém na fila!');
+                return;
+            }
+            
+            // Remove do início da fila usando shift() conforme solicitado
+            const pessoaAtendida = filaEspera.shift();
+            
+            const horaAtendimento = Date.now();
+            const dataHoraAtendimento = new Intl.DateTimeFormat('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            }).format(new Date(horaAtendimento));
+            
+            // Calcula tempo de espera
+            const tempoEsperaMs = horaAtendimento - pessoaAtendida.timestampEntrada;
+            const tempoEsperaSeg = Math.floor(tempoEsperaMs / 1000);
+            const minutos = Math.floor(tempoEsperaSeg / 60);
+            const segundos = tempoEsperaSeg % 60;
+            const tempoEspera = `${minutos}m ${segundos}s`;
+            
+            // Cria entrada no histórico conforme especificado
+            historicoCompleto.push({
+                nome: pessoaAtendida.nome,
+                dataHoraEntrada: new Intl.DateTimeFormat('pt-BR', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                }).format(new Date(pessoaAtendida.timestampEntrada)),
+                dataHoraAtendimento: dataHoraAtendimento,
+                tempoEspera: tempoEspera
+            });
+            
+            exibirDados();
+        }
+        
+        // Exibe dados dos dois vetores conforme solicitado
+        function exibirDados() {
+            const resultadoDiv = document.getElementById('resultado');
+            let texto = '';
+            
+            // Exibe fila de espera
+            texto += 'FILA DE ESPERA:\n';
+            if (filaEspera.length === 0) {
+                texto += 'Nenhuma pessoa na fila\n';
+            } else {
+                filaEspera.forEach((pessoa, index) => {
+                    texto += `${index + 1}. ${pessoa.nome} - Entrada: ${pessoa.horaEntrada}\n`;
+                });
+            }
+            
+            texto += '\nHISTÓRICO DE ATENDIMENTOS:\n';
+            if (historicoCompleto.length === 0) {
+                texto += 'Nenhum atendimento realizado\n';
+            } else {
+                historicoCompleto.forEach((registro, index) => {
+                    texto += `${index + 1}. ${registro.nome}\n`;
+                    texto += `   Entrada: ${registro.dataHoraEntrada}\n`;
+                    texto += `   Atendimento: ${registro.dataHoraAtendimento}\n`;
+                    texto += `   Tempo de espera: ${registro.tempoEspera}\n\n`;
+                });
+            }
+            
+            resultadoDiv.textContent = texto;
+        }
+        
+        // Inicializa a exibição
+        exibirDados();
+    </script>
+
+</body>
+</html>

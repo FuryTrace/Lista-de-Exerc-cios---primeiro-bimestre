@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 6</title>
+</head>
+<body style="margin:0;">
+
+    <div style="background-color:cyan; width:100%; height:50px; display:flex; align-items:center;">
+        <button 
+        onclick="window.location.href='../index.html'" 
+        style="margin-left:10px; padding:8px 16px; font-weight:bold;">
+        Voltar
+        </button>
+    </div>
+
+    <div style="padding:20px;">
+        <h1>Atividade 6</h1>
+        <p>	Número Par ou Ímpar:<br>
+	    Receba um número via prompt e use if/else para verificar se é par ou ímpar.</p>
+        
+        <div style="margin-top: 30px; padding: 20px; border: 2px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+            <h3>🔢 Verificador de Números Pares e Ímpares</h3>
+            
+            <div style="margin-bottom: 20px; padding: 15px; background-color: #e8f5e8; border-radius: 8px;">
+                <label for="numeroInput" style="font-weight: bold;">Digite um número:</label>
+                <input 
+                    type="number" 
+                    id="numeroInput" 
+                    placeholder="Ex: 15" 
+                    step="1"
+                    style="margin-left: 10px; padding: 8px; width: 120px; border: 1px solid #ccc; border-radius: 4px;"
+                    oninput="verificarParImpar()"
+                >
+                <div id="resultado" style="margin-top: 15px; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 18px; background-color: #f5f5f5; color: #666;">
+                    Digite um número para ver o resultado
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para verificar se o número é par ou ímpar
+        function verificarParImpar() {
+            const numeroInput = document.getElementById('numeroInput').value;
+            const resultadoDiv = document.getElementById('resultado');
+            
+            // Verificar se o campo está vazio
+            if (numeroInput === '') {
+                resultadoDiv.textContent = 'Digite um número para ver o resultado';
+                resultadoDiv.style.backgroundColor = '#f5f5f5';
+                resultadoDiv.style.color = '#666';
+                return;
+            }
+            
+            // Converter para número inteiro
+            let numero = parseInt(numeroInput);
+            
+            // Validar se é um número válido
+            if (isNaN(numero)) {
+                resultadoDiv.textContent = '❌ Digite um número válido';
+                resultadoDiv.style.backgroundColor = '#ffebee';
+                resultadoDiv.style.color = '#d32f2f';
+                return;
+            }
+            
+            // Estrutura condicional if/else para verificar par ou ímpar
+            if (numero % 2 === 0) {
+                resultadoDiv.textContent = `O número ${numero} é Par`;
+                resultadoDiv.style.backgroundColor = '#e8f5e8';
+            } else {
+                resultadoDiv.textContent = `O número ${numero} é Ímpar`;
+                resultadoDiv.style.backgroundColor = '#ffebee';
+            }
+            
+            resultadoDiv.style.color = '#333';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>    
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 1</title>
+</head>
+<body style="margin:0;">
+
+    <div style="background-color:cyan; width:100%; height:50px; display:flex; align-items:center;">
+        <button 
+        onclick="window.location.href='../index.html'" 
+        style="margin-left:10px; padding:8px 16px; font-weight:bold;">
+        Voltar
+        </button>
+    </div>
+
+    <div style="padding:20px;">
+        <h1>Atividade 1</h1>
+        <p>Declaração com let:<br>
+        Crie uma variável let idade e atribua sua idade. Depois, atribua um novo valor representando a idade daqui a 5 anos. Mostre os dois valores no console: "Minha idade hoje é <idade> e daqui a 5 anos será <nova_idade>"</p>
+        
+        <div style="margin-top: 30px; padding: 20px; border: 2px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+            <h3>💬 Calculadora de Idade</h3>
+            
+            <div style="margin-bottom: 15px;">
+                <label for="idadeInput" style="font-weight: bold;">Digite sua idade:</label>
+                <input 
+                    type="number" 
+                    id="idadeInput" 
+                    placeholder="Ex: 22" 
+                    min="0" 
+                    max="150"
+                    style="margin-left: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"
+                    oninput="calcularIdade()"
+                >
+            </div>
+            
+            <div style="margin-top: 20px; padding: 15px; background-color: #e8f4f8; border-radius: 5px;">
+                <div id="resultado" style="font-size: 16px; color: #333;">Digite sua idade para ver o resultado</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para calcular a idade em tempo real
+        function calcularIdade() {
+            const idadeInput = document.getElementById('idadeInput').value;
+            const resultado = document.getElementById('resultado');
+            
+            // Verificando se foi digitado um número válido
+            if (idadeInput === '') {
+                resultado.innerHTML = 'Digite sua idade para ver o resultado';
+                resultado.style.color = '#666';
+                return;
+            }
+            
+            // Convertendo para número e validando
+            let idade = parseFloat(idadeInput);
+            
+            if (isNaN(idade) || idade < 0 || idade > 150) {
+                resultado.innerHTML = '❌ Digite uma idade válida entre 0 e 150 anos';
+                resultado.style.color = '#d32f2f';
+                return;
+            }
+            
+            // Arredondando a idade para número inteiro se necessário
+            idade = Math.round(idade);
+            
+            // Criando a variável let idade e atribuindo o valor validado
+            let idadeAtual = idade;
+            
+            // Atribuindo um novo valor representando a idade daqui a 5 anos
+            let idadeFutura = idade + 5;
+            
+            // Mostrando o resultado na tela e no console
+            let mensagem = `Minha idade hoje é ${idadeAtual} e daqui a 5 anos será ${idadeFutura}`;
+            resultado.innerHTML = mensagem;
+            resultado.style.color = '#2c5530';
+            
+            console.log(mensagem);
+        }
+    </script>   
+
+</body>
+</html>

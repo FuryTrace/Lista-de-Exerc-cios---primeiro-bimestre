@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 5</title>
+</head>
+<body style="margin:0;">
+
+    <div style="background-color:cyan; width:100%; height:50px; display:flex; align-items:center;">
+        <button 
+        onclick="window.location.href='../index.html'" 
+        style="margin-left:10px; padding:8px 16px; font-weight:bold;">
+        Voltar
+        </button>
+    </div>
+
+    <div style="padding:20px;">
+        <h1>Atividade 5</h1>
+        <p>	Verificação de Idade: <br>
+	    Peça ao usuário (com prompt) sua idade.<br>
+	    o	Se for menor que 12, mostre "Criança".<br>
+	    o	Se estiver entre 12 e 17, mostre "Adolescente".<br>
+	    o	Se for maior ou igual a 18, mostre "Adulto".</p>
+        
+        <div style="margin-top: 30px; padding: 20px; border: 2px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+            <h3>🎂 Classificador de Idade</h3>
+            
+            <div style="margin-bottom: 20px; padding: 15px; background-color: #e8f5e8; border-radius: 8px;">
+                <label for="idadeInput" style="font-weight: bold;">Digite sua idade:</label>
+                <input 
+                    type="number" 
+                    id="idadeInput" 
+                    placeholder="Ex: 25" 
+                    min="0" 
+                    max="120"
+                    style="margin-left: 10px; padding: 8px; width: 100px; border: 1px solid #ccc; border-radius: 4px;"
+                    oninput="verificarIdade()"
+                >
+                <div id="resultado" style="margin-top: 15px; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 18px;">
+                    Digite uma idade para ver a classificação
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para verificação de idade
+        function verificarIdade() {
+            const idadeInput = document.getElementById('idadeInput').value;
+            const resultadoDiv = document.getElementById('resultado');
+            
+            // Verificar se o campo está vazio
+            if (idadeInput === '') {
+                resultadoDiv.textContent = 'Digite uma idade para ver a classificação';
+                resultadoDiv.style.backgroundColor = '#f5f5f5';
+                resultadoDiv.style.color = '#666';
+                return;
+            }
+            
+            // Converter para número e validar
+            let idade = parseInt(idadeInput);
+            
+            if (isNaN(idade) || idade < 0) {
+                resultadoDiv.textContent = '❌ Digite uma idade válida';
+                resultadoDiv.style.backgroundColor = '#ffebee';
+                resultadoDiv.style.color = '#d32f2f';
+                return;
+            }
+            
+            // Estrutura condicional conforme o exercício
+            if (idade < 12) {
+                resultadoDiv.textContent = 'Criança';
+                resultadoDiv.style.backgroundColor = '#e8f5e8';
+            } else if (idade >= 12 && idade <= 17) {
+                resultadoDiv.textContent = 'Adolescente';
+                resultadoDiv.style.backgroundColor = '#fff3cd';
+            } else if (idade >= 18) {
+                resultadoDiv.textContent = 'Adulto';
+                resultadoDiv.style.backgroundColor = '#e3f2fd';
+            }
+            
+            resultadoDiv.style.color = '#333';
+        }
+    </script>
+
+</body>
+</html>
