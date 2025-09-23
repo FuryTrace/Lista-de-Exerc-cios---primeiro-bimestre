@@ -4,18 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de Atividades</title>
+  <link rel="stylesheet" href="CSS/style.css">
+
 </head>
 <body style="margin:0; font-family:Arial, sans-serif;">
-  <!--
-
-  Linguagem de Programação para Web I
-  Alunos: William Cesar da Silva Rodrigues
-  Héctor Leoni de Oliveira Lima
-  Ryan Felipe
-  Análise e Desenvolvimento de Sistemas
-  Data: 20/09/2025
-
-  -->
 
   <div style="background-color:cyan; width:100%; height:60px; text-align:center;">
     <h2 style="margin:0; line-height:60px;">Página de Atividades</h2>
@@ -23,87 +15,6 @@
 
   <div id="conteudo" style="padding:20px; text-align:center;"></div>
 
-  <script>
-    const partes = [
-      {
-        titulo: "Parte 1 – Declaração de Variáveis (let e const)",
-        atividades: [
-          "Declaração com let",
-          "Uso de const",
-          "Concatenação de Strings",
-          "Diferença de Escopo"
-        ]
-      },
-      {
-        titulo: "Parte 2 – Estruturas Condicionais (if, else if, else e operador ternário)",
-        atividades: [
-          "Verificação de Idade",
-          "Número Par ou Ímpar",
-          "Nota de Aluno",
-          "Operador Ternário"
-        ]
-      },
-      {
-        titulo: "Parte 3 – Laços de Repetição (for, while, for...in, for...of)",
-        atividades: [
-          "Tabuada com for",
-          "Contagem Regressiva com while",
-          "Percorrendo Objetos com for...in",
-          "Percorrendo Arrays com for...of"
-        ]
-      },
-      {
-        titulo: "Parte 4 – Objetos",
-        atividades: [
-          "Criação de Objeto",
-          "Método em Objeto",
-          "Manipulação de Propriedades"
-        ]
-      },
-      {
-        titulo: "Parte 5 – Arrays com map, filter, sort",
-        atividades: [
-          "Dobrar Valores (map)",
-          "Filtrar Números Pares (filter)",
-          "Ordenação (sort)",
-          "Encadeando Métodos",
-          "Refazer"
-        ]
-      },
-      {
-        titulo: "Parte 6 – Controle de Fila de Atendimento",
-        atividades: [
-          "Atendimento"
-        ]
-      }
-    ];
-
-    const conteudo = document.getElementById("conteudo");
-    let contador = 1;
-
-    partes.forEach(parte => {
-      // Título
-      const p = document.createElement("p");
-      p.textContent = parte.titulo;
-      p.setAttribute("style", "font-weight:bold; margin-top:30px;");
-      conteudo.appendChild(p);
-
-      // Botões
-      parte.atividades.forEach(atividade => {
-        const numero = contador;
-        const btn = document.createElement("button");
-        btn.textContent = numero + ". " + atividade;
-        btn.setAttribute("style", "margin:5px; padding:10px 20px; font-size:14px; cursor:pointer;");
-        
-        btn.onclick = () => {
-          window.location.href = "atividades/atividade" + numero + ".html";
-        };
-
-        conteudo.appendChild(btn);
-        contador++;
-      });
-    });
-  </script>
-
+  <script src="JS/script.js"></script>
 </body>
 </html>
