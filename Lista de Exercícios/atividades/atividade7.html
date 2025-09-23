@@ -6,17 +6,17 @@
   <title>Atividade 7</title>
   <link rel="stylesheet" href="../CSS/style.css">
 </head>
-<body style="margin:0;">
+<body>
 
-    <div style="background-color:cyan; width:100%; height:50px; display:flex; align-items:center;">
+    <div class="activity-header">
         <button 
         onclick="window.location.href='../index.html'" 
-        style="margin-left:10px; padding:8px 16px; font-weight:bold;">
+        class="back-button">
         Voltar
         </button>
     </div>
 
-    <div style="padding:20px;">
+    <div class="content-container">
         <h1>Atividade 7</h1>
         <p>	Nota de Aluno:	<br>
 	    Receba uma nota de 0 a 10.<br>
@@ -24,11 +24,11 @@
 	    o	>= 5 e < 7: "Recuperação".<br>
 	    o	< 5: "Reprovado".</p>
         
-        <div style="margin-top: 30px; padding: 20px; border: 2px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+        <div class="activity-card">
             <h3>📝 Verificador de Notas</h3>
             
-            <div style="margin-bottom: 20px; padding: 15px; background-color: #e8f5e8; border-radius: 8px;">
-                <label for="notaInput" style="font-weight: bold;">Digite a nota (0 a 10):</label>
+            <div class="form-section">
+                <label for="notaInput">Digite a nota (0 a 10):</label>
                 <input 
                     type="number" 
                     id="notaInput" 
@@ -36,54 +36,16 @@
                     min="0" 
                     max="10" 
                     step="0.1"
-                    style="margin-left: 10px; padding: 8px; width: 100px; border: 1px solid #ccc; border-radius: 4px;"
+                    class="ml-2 px-2 py-1 small-input"
                     oninput="verificarNota()"
                 >
-                <div id="resultado" style="margin-top: 15px; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 18px; background-color: #f5f5f5; color: #666;">
+                <div id="resultado" class="result-dynamic neutral">
                     Digite uma nota para ver o resultado
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        function verificarNota() {
-            const notaInput = document.getElementById('notaInput').value;
-            const resultadoDiv = document.getElementById('resultado');
-            
-            // Verificar se o campo está vazio
-            if (notaInput === '') {
-                resultadoDiv.textContent = 'Digite uma nota para ver o resultado';
-                resultadoDiv.style.backgroundColor = '#f5f5f5';
-                resultadoDiv.style.color = '#666';
-                return;
-            }
-            
-            // Converter para número e validar
-            let nota = parseFloat(notaInput);
-            
-            if (isNaN(nota) || nota < 0 || nota > 10) {
-                resultadoDiv.textContent = '❌ Digite uma nota válida entre 0 e 10';
-                resultadoDiv.style.backgroundColor = '#ffebee';
-                resultadoDiv.style.color = '#d32f2f';
-                return;
-            }
-            
-            // Estrutura condicional conforme o exercício
-            if (nota >= 7) {
-                resultadoDiv.textContent = 'Aprovado';
-                resultadoDiv.style.backgroundColor = '#e8f5e8';
-            } else if (nota >= 5 && nota < 7) {
-                resultadoDiv.textContent = 'Recuperação';
-                resultadoDiv.style.backgroundColor = '#fff3cd';
-            } else if (nota < 5) {
-                resultadoDiv.textContent = 'Reprovado';
-                resultadoDiv.style.backgroundColor = '#ffebee';
-            }
-            
-            resultadoDiv.style.color = '#333';
-        }
-    </script>
     <script src="../JS/script.js"></script>
 </body>
 </html>

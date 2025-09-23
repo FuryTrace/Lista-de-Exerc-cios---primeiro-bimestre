@@ -59,17 +59,17 @@ let contador = 1;
 
 partes.forEach(parte => {
 // Título
-const p = document.createElement("p");
-p.textContent = parte.titulo;
-p.setAttribute("style", "font-weight:bold; margin-top:30px;");
-conteudo.appendChild(p);
+const h2 = document.createElement("h2");
+h2.textContent = parte.titulo;
+h2.className = "slide-in";
+conteudo.appendChild(h2);
 
 // Botões
 parte.atividades.forEach(atividade => {
     const numero = contador;
     const btn = document.createElement("button");
     btn.textContent = numero + ". " + atividade;
-    btn.setAttribute("style", "margin:5px; padding:10px 20px; font-size:14px; cursor:pointer;");
+    btn.className = "btn btn-primary mb-3 fade-in";
     
     btn.onclick = () => {
     window.location.href = "Atividades/atividade" + numero + ".html";

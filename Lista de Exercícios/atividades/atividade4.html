@@ -6,33 +6,33 @@
   <title>Atividade 4</title>
   <link rel="stylesheet" href="../CSS/style.css">
 </head>
-<body style="margin:0;">
+<body>
 
-    <div style="background-color:cyan; width:100%; height:50px; display:flex; align-items:center;">
+    <div class="activity-header">
         <button 
         onclick="window.location.href='../index.html'" 
-        style="margin-left:10px; padding:8px 16px; font-weight:bold;">
+        class="back-button">
         Voltar
         </button>
     </div>
 
-    <div style="padding:20px;">
+    <div class="content-container">
         <h1>Atividade 4</h1>
         <p>	Diferença de Escopo:<br>
 	    Declare uma variável let numero = 10 fora de um bloco {}. Dentro do bloco, declare novamente let numero = 20. Mostre o valor da variável dentro e fora do bloco com console.log.</p>
         
-        <div style="margin-top: 30px; padding: 20px; border: 2px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+        <div class="activity-card">
             <h3>🔍 Demonstração de Escopo com `let`</h3>
             
-            <div style="margin-bottom: 20px; padding: 15px; background-color: #e8f5e8; border-radius: 8px;">
-                <div id="resultados" style="font-family: monospace; background-color: white; padding: 15px; border-radius: 4px; white-space: pre-line;">
+            <div class="input-section">
+                <div id="resultados" class="result-mono">
                     Carregando demonstração...
                 </div>
             </div>
             
             <button 
                 onclick="executarDemonstracao()" 
-                style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">
+                class="btn btn-secondary">
                 🔄 Executar Novamente
             </button>
         </div>

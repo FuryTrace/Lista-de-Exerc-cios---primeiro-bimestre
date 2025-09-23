@@ -6,62 +6,37 @@
   <title>Atividade 11</title>
   <link rel="stylesheet" href="../CSS/style.css">
 </head>
-<body style="margin:0;">
+<body>
 
-    <div style="background-color:cyan; width:100%; height:50px; display:flex; align-items:center;">
+    <div class="activity-header">
         <button 
         onclick="window.location.href='../index.html'" 
-        style="margin-left:10px; padding:8px 16px; font-weight:bold;">
+        class="back-button">
         Voltar
         </button>
     </div>
 
-    <div style="padding:20px;">
+    <div class="content-container">
         <h1>Atividade 11</h1>
         <p>Percorrendo Objetos com for...in:<br>
 	    Crie um objeto pessoa com nome, idade e cidade. Use for...in para listar suas propriedades e valores.</p>
         
-        <div style="margin-top: 30px; padding: 20px; border: 2px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+        <div class="activity-card">
             <h3>👤 Objeto Pessoa</h3>
             
-            <div style="margin-bottom: 20px; padding: 15px; background-color: #e8f5e8; border-radius: 8px;">
+            <div class="form-section">
                 <button 
                     onclick="percorrerObjeto()" 
-                    style="padding: 12px 24px; font-size: 16px; font-weight: bold; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;"
-                >
+                    class="btn btn-secondary mb-4">
                     Percorrer Objeto Pessoa
                 </button>
-                <div id="resultado" style="margin-top: 15px; padding: 10px; border-radius: 4px; font-family: monospace; font-size: 16px; background-color: #f5f5f5; color: #666;">
+                <div id="resultado" class="result-mono neutral">
                     Clique no botão para listar as propriedades
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        function percorrerObjeto() {
-            const resultadoDiv = document.getElementById('resultado');
-            
-            // Criar objeto pessoa conforme o exercício
-            const pessoa = {
-                nome: "João Silva",
-                idade: 25,
-                cidade: "São Paulo"
-            };
-            
-            // Usar for...in para listar propriedades e valores
-            let propriedades = '';
-            
-            for (let propriedade in pessoa) {
-                propriedades += `${propriedade}: ${pessoa[propriedade]}\n`;
-            }
-            
-            resultadoDiv.textContent = propriedades;
-            resultadoDiv.style.backgroundColor = '#e8f5e8';
-            resultadoDiv.style.color = '#333';
-            resultadoDiv.style.whiteSpace = 'pre-line';
-        }
-    </script>
     <script src="../JS/script.js"></script>
 </body>
 </html>

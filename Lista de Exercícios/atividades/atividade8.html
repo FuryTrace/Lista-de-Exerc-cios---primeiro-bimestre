@@ -6,74 +6,41 @@
   <title>Atividade 8</title>
   <link rel="stylesheet" href="../CSS/style.css">
 </head>
-<body style="margin:0;">
+<body>
 
-    <div style="background-color:cyan; width:100%; height:50px; display:flex; align-items:center;">
+    <div class="activity-header">
         <button 
         onclick="window.location.href='../index.html'" 
-        style="margin-left:10px; padding:8px 16px; font-weight:bold;">
+        class="back-button">
         Voltar
         </button>
     </div>
 
-    <div style="padding:20px;">
+    <div class="content-container">
         <h1>Atividade 8</h1>
         <p>	Operador Ternário:<br>
 	    Receba um número via prompt e mostre no console:<br>
         "Positivo" se maior que 0, "Negativo" se menor que 0, ou "Zero" caso contrário, usando apenas operador ternário.</p>
         
-        <div style="margin-top: 30px; padding: 20px; border: 2px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+        <div class="activity-card">
             <h3>🔢 Verificador de Número (Operador Ternário)</h3>
             
-            <div style="margin-bottom: 20px; padding: 15px; background-color: #e8f5e8; border-radius: 8px;">
-                <label for="numeroInput" style="font-weight: bold;">Digite um número:</label>
+            <div class="form-section">
+                <label for="numeroInput">Digite um número:</label>
                 <input 
                     type="number" 
                     id="numeroInput" 
                     placeholder="Ex: -5, 0, 10" 
-                    style="margin-left: 10px; padding: 8px; width: 150px; border: 1px solid #ccc; border-radius: 4px;"
+                    class="ml-2 px-2 py-1 large-input"
                     oninput="verificarNumero()"
                 >
-                <div id="resultado" style="margin-top: 15px; padding: 10px; border-radius: 4px; font-weight: bold; font-size: 18px; background-color: #f5f5f5; color: #666;">
+                <div id="resultado" class="result-dynamic neutral">
                     Digite um número para ver o resultado
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        function verificarNumero() {
-            const numeroInput = document.getElementById('numeroInput').value;
-            const resultadoDiv = document.getElementById('resultado');
-            
-            // Verificar se o campo está vazio
-            if (numeroInput === '') {
-                resultadoDiv.textContent = 'Digite um número para ver o resultado';
-                resultadoDiv.style.backgroundColor = '#f5f5f5';
-                resultadoDiv.style.color = '#666';
-                return;
-            }
-            
-            // Converter para número
-            let numero = parseFloat(numeroInput);
-            
-            if (isNaN(numero)) {
-                resultadoDiv.textContent = '❌ Digite um número válido';
-                resultadoDiv.style.backgroundColor = '#ffebee';
-                resultadoDiv.style.color = '#d32f2f';
-                return;
-            }
-            
-            // Usando operador ternário conforme o exercício
-            let resultado = numero > 0 ? "Positivo" : numero < 0 ? "Negativo" : "Zero";
-            
-            console.log(resultado); // Log no console conforme solicitado
-            
-            resultadoDiv.textContent = resultado;
-            resultadoDiv.style.backgroundColor = '#e8f5e8';
-            resultadoDiv.style.color = '#333';
-        }
-    </script>
     <script src="../JS/script.js"></script>
 </body>
 </html>

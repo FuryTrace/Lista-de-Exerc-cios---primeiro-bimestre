@@ -6,39 +6,39 @@
   <title>Atividade 1</title>
   <link rel="stylesheet" href="../CSS/style.css">
 </head>
-<body style="margin:0;">
+<body>
 
-    <div style="background-color:cyan; width:100%; height:50px; display:flex; align-items:center;">
+    <div class="activity-header">
         <button 
         onclick="window.location.href='../index.html'" 
-        style="margin-left:10px; padding:8px 16px; font-weight:bold;">
+        class="back-button">
         Voltar
         </button>
     </div>
 
-    <div style="padding:20px;">
+    <div class="content-container">
         <h1>Atividade 1</h1>
         <p>Declaração com let:<br>
         Crie uma variável let idade e atribua sua idade. Depois, atribua um novo valor representando a idade daqui a 5 anos. Mostre os dois valores no console: "Minha idade hoje é <idade> e daqui a 5 anos será <nova_idade>"</p>
         
-        <div style="margin-top: 30px; padding: 20px; border: 2px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+        <div class="activity-card">
             <h3>💬 Calculadora de Idade</h3>
             
-            <div style="margin-bottom: 15px;">
-                <label for="idadeInput" style="font-weight: bold;">Digite sua idade:</label>
+            <div class="form-group">
+                <label for="idadeInput">Digite sua idade:</label>
                 <input 
                     type="number" 
                     id="idadeInput" 
                     placeholder="Ex: 22" 
                     min="0" 
                     max="150"
-                    style="margin-left: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"
+                    class="input-small"
                     oninput="calcularIdade()"
                 >
             </div>
             
-            <div style="margin-top: 20px; padding: 15px; background-color: #e8f4f8; border-radius: 5px;">
-                <div id="resultado" style="font-size: 16px; color: #333;">Digite sua idade para ver o resultado</div>
+            <div class="result-section">
+                <div id="resultado" class="result-display">Digite sua idade para ver o resultado</div>
             </div>
         </div>
     </div>
