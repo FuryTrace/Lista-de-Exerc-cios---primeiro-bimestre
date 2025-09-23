@@ -317,8 +317,6 @@ input[type="number"]:focus {
 
 /* Estilos específicos para botões do index */
 .index-btn-primary {
-/* Estilos específicos para botões do index */
-.index-btn-primary {
     padding: 15px 30px;
     font-size: 18px;
     font-weight: 600;
