@@ -9,11 +9,7 @@
 <body>
 
     <div class="activity-header">
-        <button 
-        onclick="window.location.href='../index.html'" 
-        class="back-button">
-        Voltar
-        </button>
+        <button class="back-button">Voltar</button>
     </div>
 
     <div class="content-container">
@@ -31,75 +27,10 @@
                 </div>
             </div>
             
-            <button 
-                onclick="executarDemonstracao()" 
-                class="btn btn-secondary">
-                🔄 Executar Novamente
-            </button>
+            <button class="btn btn-secondary" data-action="executarDemonstracao">🔄 Executar Novamente</button>
         </div>
     </div>
 
-    <script>
-        function executarDemonstracao() {
-            const resultadosDiv = document.getElementById('resultados');
-            let logs = [];
-            
-            // Capturando logs para exibir na tela
-            const originalLog = console.log;
-            const originalError = console.error;
-            
-            console.log = function(...args) {
-                const message = args.join(' ');
-                logs.push(message);
-                originalLog.apply(console, args);
-            };
-            
-            console.error = function(...args) {
-                const message = "❌ ERRO: " + args.join(' ');
-                logs.push(message);
-                originalError.apply(console, args);
-            };
-            
-            console.log("=== ATIVIDADE 2: USO DE CONST ===");
-            
-            // PARTE A: Declare uma constante PI com valor 3.14159
-            console.log("\n--- PARTE A ---");
-            const PI = 3.14159;
-            console.log(`PI declarado com valor: ${PI}`);
-            
-            // Tentativa de atribuir outro valor a PI
-            console.log("Tentando atribuir novo valor a PI...");
-            try {
-                PI = 3.14; // Isso vai gerar erro!
-                console.log(`Novo valor de PI: ${PI}`);
-            } catch (error) {
-                console.error(error.message);
-                console.log("Explicação: Constantes não podem ser reatribuídas após sua declaração.");
-            }
-            
-            // PARTE B: Demonstração do erro de declaração sem valor
-            console.log("\n--- PARTE B ---");
-            console.log("Tentando declarar constante SemanasDoAno sem valor inicial...");
-            console.log("❌ Esta declaração geraria erro de sintaxe!");
-            console.log("Erro: Missing initializer in const declaration");
-            console.log("Explicação: Constantes devem ser inicializadas no momento da declaração.");
-            
-            // Forma correta
-            const SemanasDoAno = 52;
-            console.log(`✅ Forma correta - SemanasDoAno: ${SemanasDoAno}`);
-            
-            // Restaurando console original
-            console.log = originalLog;
-            console.error = originalError;
-            
-            // Exibindo resultados na tela
-            resultadosDiv.textContent = logs.join('\n');
-        }
-        
-        // Executar demonstração ao carregar a página
-        window.onload = function() {
-            executarDemonstracao();
-        };
-    </script>
     <script src="../JS/script.js"></script>
 </body>
+</html>

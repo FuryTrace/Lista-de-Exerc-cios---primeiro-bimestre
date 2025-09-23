@@ -9,10 +9,8 @@
 <body>
 
     <div class="activity-header">
-        <button 
-        onclick="window.location.href='../index.html'" 
-        class="back-button">
-        Voltar
+        <button class="back-button">
+            Voltar
         </button>
     </div>
 
@@ -26,9 +24,8 @@
             
             <div class="activity-card">
                 <button 
-                    onclick="encadearMetodos()" 
-                    
-                >
+                    data-action="encadearMetodos" 
+                    class="btn btn-secondary">
                     Encadear Filter e Map
                 </button>
                 <div id="resultado" class="result-mono neutral">

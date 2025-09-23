@@ -6,68 +6,69 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #e8f5e8 100%);
     min-height: 100vh;
-    color: #333;
+    color: #5a5a5a;
 }
 
 /* Página inicial */
 .index-body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #e8f5e8 100%);
     min-height: 100vh;
 }
 
 /* Header/Cabeçalho */
 .header {
-    background: linear-gradient(135deg, #2196F3 0%, #21CBF3 100%);
+    background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%);
     width: 100%;
     height: 70px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
 }
 
 .header h2 {
     margin: 0;
     line-height: 70px;
-    color: white;
+    color: #4a7c59;
     font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
     font-size: 1.8rem;
 }
 
 /* Header das atividades */
 .activity-header {
-    background: linear-gradient(135deg, #2196F3 0%, #21CBF3 100%);
+    background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%);
     width: 100%;
     height: 60px;
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
 }
 
 .back-button {
     margin-left: 20px;
     padding: 12px 24px;
     font-weight: 600;
-    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    background: linear-gradient(135deg, #fff 0%, #f8f8ff 100%);
     border: none;
     border-radius: 25px;
     cursor: pointer;
     text-decoration: none;
-    color: #2196F3;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #6b7280;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
     font-size: 14px;
 }
 
 .back-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #f8f8ff 0%, #f0f0ff 100%);
+    color: #4a5568;
 }
 
 /* Container de conteúdo */
@@ -78,25 +79,26 @@ body {
 }
 
 .content-container h1 {
-    color: white;
+    color: #6b7280;
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 10px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
     font-weight: 700;
 }
 
 .content-container p {
-    color: rgba(255, 255, 255, 0.9);
+    color: #6b7280;
     text-align: center;
     font-size: 1.1rem;
     margin-bottom: 30px;
     line-height: 1.6;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.7);
     padding: 15px 20px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .index-content {
@@ -110,21 +112,22 @@ body {
 .activity-card {
     margin-top: 30px;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease;
 }
 
 .activity-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .activity-card h3 {
-    color: #2196F3;
+    color: #7c3aed;
     font-size: 1.5rem;
     margin-bottom: 20px;
     font-weight: 600;
@@ -135,23 +138,23 @@ body {
 .input-section {
     margin-bottom: 25px;
     padding: 20px;
-    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
     border-radius: 15px;
-    border: 1px solid rgba(33, 150, 243, 0.2);
+    border: 1px solid rgba(233, 30, 99, 0.2);
 }
 
 .form-section {
     margin-bottom: 25px;
     padding: 20px;
-    background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+    background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
     border-radius: 15px;
-    border: 1px solid rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(139, 195, 74, 0.3);
 }
 
 .demo-section {
     margin: 20px 0;
     padding: 15px;
-    background: linear-gradient(135deg, #e8f4f8 0%, #e1f5fe 100%);
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
     border-radius: 15px;
     border: 1px solid rgba(33, 150, 243, 0.2);
 }
@@ -262,39 +265,39 @@ input[type="number"]:focus {
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #2196F3 0%, #21CBF3 100%);
-    color: white;
+    background: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%);
+    color: #4a7c59;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #1976D2 0%, #0288D1 100%);
+    background: linear-gradient(135deg, #9be5c7 0%, #7dd3b8 100%);
 }
 
 .btn-secondary {
-    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
-    color: white;
+    background: linear-gradient(135deg, #ffd3a5 0%, #fd9853 100%);
+    color: #8b4513;
 }
 
 .btn-secondary:hover {
-    background: linear-gradient(135deg, #388E3C 0%, #43A047 100%);
+    background: linear-gradient(135deg, #ffcd99 0%, #fc8947 100%);
 }
 
 .btn-success {
-    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
-    color: white;
+    background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+    color: #2e7d32;
 }
 
 .btn-success:hover {
-    background: linear-gradient(135deg, #388E3C 0%, #43A047 100%);
+    background: linear-gradient(135deg, #c1e5c2 0%, #9ccc9e 100%);
 }
 
 .btn-warning {
@@ -359,17 +362,17 @@ input[type="number"]:focus {
 .result-display {
     margin-top: 20px;
     padding: 20px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
     border-radius: 15px;
-    border: 2px solid #e1e8ed;
+    border: 2px solid #c8e6c9;
     font-weight: 500;
-    color: #2c3e50;
+    color: #4a7c59;
     min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(168, 230, 207, 0.15);
     transition: all 0.3s ease;
 }
 
@@ -380,14 +383,14 @@ input[type="number"]:focus {
 .result-mono {
     margin-top: 20px;
     padding: 20px;
-    background: linear-gradient(135deg, #263238 0%, #37474f 100%);
+    background: linear-gradient(135deg, #f0f4f8 0%, #e6f3ff 100%);
     border-radius: 15px;
     font-family: 'Courier New', Consolas, monospace;
     font-size: 16px;
-    color: #00e676;
+    color: #5a7f8c;
     white-space: pre-line;
-    border: 2px solid #546e7a;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #b8d4e3;
+    box-shadow: 0 4px 15px rgba(184, 212, 227, 0.2);
     min-height: 60px;
     display: flex;
     align-items: center;
@@ -527,82 +530,4 @@ input[type="number"]:focus {
 
 .fade-in {
     animation: fadeIn 0.6s ease-out;
-}
-
-.slide-in {
-    animation: slideIn 0.6s ease-out;
-}
-
-/* Media Queries - Responsividade */
-@media (max-width: 768px) {
-    .content-container {
-        padding: 20px;
-    }
-    
-    .content-container h1 {
-        font-size: 2rem;
-    }
-    
-    .activity-card {
-        padding: 20px;
-        margin-top: 20px;
-    }
-    
-    .activity-header {
-        height: 60px;
-    }
-    
-    .back-button {
-        margin-left: 15px;
-        padding: 10px 20px;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 14px;
-        min-width: 100px;
-    }
-    
-    .form-input,
-    .input-small,
-    .input-medium,
-    .input-large {
-        width: 100%;
-        margin-left: 0;
-        margin-top: 8px;
-    }
-    
-    .activity-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .content-container {
-        padding: 15px;
-    }
-    
-    .content-container h1 {
-        font-size: 1.8rem;
-    }
-    
-    .activity-card {
-        padding: 15px;
-    }
-    
-    .activity-card h3 {
-        font-size: 1.3rem;
-    }
-    
-    .btn {
-        padding: 8px 16px;
-        font-size: 13px;
-    }
-    
-    .back-button {
-        margin-left: 10px;
-        padding: 8px 16px;
-        font-size: 13px;
-    }
 }

@@ -9,10 +9,8 @@
 <body>
 
     <div class="activity-header">
-        <button 
-        onclick="window.location.href='../index.html'" 
-        class="back-button">
-        Voltar
+        <button class="back-button">
+            Voltar
         </button>
     </div>
 
@@ -30,9 +28,8 @@
             
             <div class="activity-card">
                 <button 
-                    onclick="manipularObjeto()" 
-                    
-                >
+                    data-action="manipularObjeto" 
+                    class="btn btn-secondary">
                     Manipular Objeto Livro
                 </button>
                 <div id="resultado" class="result-mono neutral">

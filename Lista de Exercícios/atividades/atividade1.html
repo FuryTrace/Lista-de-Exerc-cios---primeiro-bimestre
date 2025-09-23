@@ -9,10 +9,8 @@
 <body>
 
     <div class="activity-header">
-        <button 
-        onclick="window.location.href='../index.html'" 
-        class="back-button">
-        Voltar
+        <button class="back-button">
+            Voltar
         </button>
     </div>
 
@@ -43,45 +41,6 @@
         </div>
     </div>
 
-    <script>
-        // Função para calcular a idade em tempo real
-        function calcularIdade() {
-            const idadeInput = document.getElementById('idadeInput').value;
-            const resultado = document.getElementById('resultado');
-            
-            // Verificando se foi digitado um número válido
-            if (idadeInput === '') {
-                resultado.innerHTML = 'Digite sua idade para ver o resultado';
-                resultado.style.color = '#666';
-                return;
-            }
-            
-            // Convertendo para número e validando
-            let idade = parseFloat(idadeInput);
-            
-            if (isNaN(idade) || idade < 0 || idade > 150) {
-                resultado.innerHTML = '❌ Digite uma idade válida entre 0 e 150 anos';
-                resultado.style.color = '#d32f2f';
-                return;
-            }
-            
-            // Arredondando a idade para número inteiro se necessário
-            idade = Math.round(idade);
-            
-            // Criando a variável let idade e atribuindo o valor validado
-            let idadeAtual = idade;
-            
-            // Atribuindo um novo valor representando a idade daqui a 5 anos
-            let idadeFutura = idade + 5;
-            
-            // Mostrando o resultado na tela e no console
-            let mensagem = `Minha idade hoje é ${idadeAtual} e daqui a 5 anos será ${idadeFutura}`;
-            resultado.innerHTML = mensagem;
-            resultado.style.color = '#2c5530';
-            
-            console.log(mensagem);
-        }
-    </script>   
     <script src="../JS/script.js"></script>
 </body>
 </html>

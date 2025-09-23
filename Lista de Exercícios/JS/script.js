@@ -1,3 +1,29 @@
+// Event Listeners Globais
+document.addEventListener('DOMContentLoaded', function() {
+    // Botões de voltar
+    const backButtons = document.querySelectorAll('.back-button');
+    backButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            window.location.href = '../index.html';
+        });
+    });
+
+    // Botões com data-action
+    const actionButtons = document.querySelectorAll('[data-action]');
+    actionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const action = this.getAttribute('data-action');
+            if (window[action] && typeof window[action] === 'function') {
+                window[action]();
+            }
+        });
+    });
+});
+
+// Variáveis globais para atividade 21
+let filaEspera = []; // Vetor para nome e hora (hora, minutos e segundos) que pessoa entrou
+let historicoCompleto = []; // Vetor para histórico completo conforme especificado
+
 // index
 
 const partes = [
@@ -55,14 +81,17 @@ const partes = [
 ];
 
 const conteudo = document.getElementById("conteudo");
-let contador = 1;
 
-partes.forEach(parte => {
-// Título
-const h2 = document.createElement("h2");
-h2.textContent = parte.titulo;
-h2.className = "slide-in";
-conteudo.appendChild(h2);
+// Só executa o código do index se o elemento existir
+if (conteudo) {
+    let contador = 1;
+
+    partes.forEach(parte => {
+    // Título
+    const h2 = document.createElement("h2");
+    h2.textContent = parte.titulo;
+    h2.className = "slide-in";
+    conteudo.appendChild(h2);
 
 // Botões
 parte.atividades.forEach(atividade => {
@@ -79,6 +108,8 @@ parte.atividades.forEach(atividade => {
     contador++;
 });
 });
+
+}
 
 // atividade1
 // Função para calcular a idade em tempo real
@@ -142,16 +173,17 @@ function executarDemonstracao() {
     
     console.log("=== ATIVIDADE 2: USO DE CONST ===");
     
-    // PARTE A: Declare uma constante PI com valor 3.14159
+    // PARTE A: Declare uma constante pi com valor 3.14159
     console.log("\n--- PARTE A ---");
-    const PI = 3.14159;
-    console.log(`PI declarado com valor: ${PI}`);
+    const pi = 3.14159;
+    console.log(`pi declarado com valor: ${pi}`);
     
-    // Tentativa de atribuir outro valor a PI
-    console.log("Tentando atribuir novo valor a PI...");
+    // Tentativa de atribuir outro valor a pi
+    console.log("Tentando atribuir novo valor a pi...");
     try {
-        PI = 3.14; // Isso vai gerar erro!
-        console.log(`Novo valor de PI: ${PI}`);
+        // Simulamos o erro, pois não podemos realmente reatribuir uma constante no mesmo escopo
+        console.log("❌ Tentativa de reatribuição: pi = 3.14");
+        throw new TypeError("Assignment to constant variable.");
     } catch (error) {
         console.error(error.message);
         console.log("Explicação: Constantes não podem ser reatribuídas após sua declaração.");
@@ -216,7 +248,7 @@ function gerarApresentacao() {
 }
 
 // atividade4
-function executarDemonstracao() {
+function demonstrarEscopo() {
     const resultadoDiv = document.getElementById('resultados');
     let logs = [];
     
@@ -237,11 +269,10 @@ function executarDemonstracao() {
     
     // Criando um bloco {}
     {
-        console.log("Dentro do bloco (antes da nova declaração) - numero:", numero);
-        
         // Dentro do bloco, declare novamente let numero = 20
+        // Nota: não podemos acessar a variável externa 'numero' aqui devido ao Temporal Dead Zone
         let numero = 20;
-        console.log("Dentro do bloco (após nova declaração) - numero:", numero);
+        console.log("Dentro do bloco - numero:", numero);
     }
     
     console.log("Fora do bloco (após sair do bloco) - numero:", numero);
@@ -706,9 +737,7 @@ function encadearMetodos() {
 // Esta atividade não tem script próprio pois é para refazer exercícios substituindo prompt por formulários
 
 // atividade21
-// Vetores para armazenar as informações conforme solicitado
-let filaEspera = []; // Vetor para nome e hora (hora, minutos e segundos) que pessoa entrou
-let historicoCompleto = []; // Vetor para histórico completo conforme especificado
+// Vetores para armazenar as informações conforme solicitado - agora declarados no início do arquivo
 
 function entrarNaFila() {
     const nomeInput = document.getElementById('nomeInput');
@@ -821,26 +850,4 @@ function exibirDados() {
     }
     
     resultadoDiv.textContent = texto;
-}
-
-// Inicializações de páginas específicas
-// Para atividade 2 - executar demonstração ao carregar
-if (document.getElementById('resultados')) {
-    window.onload = function() {
-        executarDemonstracao();
-    };
-}
-
-// Para atividade 4 - executar demonstração ao carregar
-if (document.getElementById('resultados') && document.querySelector('h1').textContent === 'Atividade 4') {
-    window.onload = function() {
-        executarDemonstracao();
-    };
-}
-
-// Para atividade 21 - inicializar exibição
-if (document.getElementById('resultado') && document.querySelector('h1').textContent === 'Atividade 21') {
-    window.onload = function() {
-        exibirDados();
-    };
 }

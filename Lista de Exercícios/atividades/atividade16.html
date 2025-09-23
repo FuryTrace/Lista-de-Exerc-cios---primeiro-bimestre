@@ -10,10 +10,8 @@
 
     <!-- Barra superior -->
     <div class="activity-header">
-        <button 
-        onclick="window.location.href='../index.html'" 
-        class="back-button">
-        Voltar
+        <button class="back-button">
+            Voltar
         </button>
     </div>
 
@@ -28,9 +26,8 @@
             
             <div class="activity-card">
                 <button 
-                    onclick="dobrarValores()" 
-                    
-                >
+                    data-action="dobrarValores" 
+                    class="btn btn-secondary">
                     Usar Map para Dobrar Valores
                 </button>
                 <div id="resultado" class="result-mono neutral">

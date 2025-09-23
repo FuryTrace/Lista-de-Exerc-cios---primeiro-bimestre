@@ -9,10 +9,8 @@
 <body>
 
     <div class="activity-header">
-        <button 
-        onclick="window.location.href='../index.html'" 
-        class="back-button">
-        Voltar
+        <button class="back-button">
+            Voltar
         </button>
     </div>
 
@@ -65,45 +63,6 @@
         </div>
     </div>
 
-    <script>
-        // Função para gerar a apresentação com concatenação
-        function gerarApresentacao() {
-            // Criando as três variáveis let conforme solicitado
-            let nome = document.getElementById('nomeInput').value.trim();
-            let sobrenome = document.getElementById('sobrenomeInput').value.trim();
-            let anoNascimento = document.getElementById('anoInput').value;
-            
-            let resultado = document.getElementById('resultado');
-            
-            // Verificando se todos os campos estão preenchidos
-            if (nome === '' || sobrenome === '' || anoNascimento === '') {
-                resultado.innerHTML = 'Preencha todos os campos para ver o resultado';
-                resultado.style.color = '#666';
-                return;
-            }
-            
-            // Validando ano de nascimento
-            let ano = parseInt(anoNascimento);
-            if (isNaN(ano) || ano < 1900 || ano > 2025) {
-                resultado.innerHTML = '❌ Digite um ano válido entre 1900 e 2025';
-                resultado.style.color = '#d32f2f';
-                return;
-            }
-            
-            // Concatenação do nome completo
-            let nomeCompleto = nome + " " + sobrenome;
-            
-            // Frase conforme solicitado no exercício
-            let frase = "Olá, meu nome é " + nomeCompleto + " e eu nasci em " + anoNascimento;
-            
-            // Exibindo o resultado
-            resultado.innerHTML = frase;
-            resultado.style.color = '#2c5530';
-            
-            // Mostrando no console conforme pedido
-            console.log(frase);
-        }
-    </script>
     <script src="../JS/script.js"></script>
 </body>
 </html>

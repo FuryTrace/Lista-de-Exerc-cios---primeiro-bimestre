@@ -9,10 +9,8 @@
 <body>
 
     <div class="activity-header">
-        <button 
-        onclick="window.location.href='../index.html'" 
-        class="back-button">
-        Voltar
+        <button class="back-button">
+            Voltar
         </button>
     </div>
 
@@ -33,12 +31,12 @@
                 class="form-input mr-2"
             >
             <button 
-                onclick="entrarNaFila()" 
+                data-action="entrarNaFila" 
                 class="btn btn-success mr-2">
                 Entrar na Fila
             </button>
             <button 
-                onclick="atenderPessoa()" 
+                data-action="atenderPessoa" 
                 class="btn btn-warning">
                 Atender
             </button>
